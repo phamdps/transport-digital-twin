@@ -1,0 +1,125 @@
+Args in experiment:
+Namespace(fix_seed=3000, task_name='long_term_forecast', is_training=1, train_only=False, model_id='test', model='DLinear', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, embed_type=0, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, embed='timeF', output_attention=False, do_predict=False, seg_len=6, win_size=2, baseline=0, cross_factor=10, flash_attn=0, num_blocks=3, hidden_size=32, single_layer_mixer=False, activation='gelu', dropout=0.0, early_stopping=True, enc_in=7, norm='batch', excluded_component=0, patch_size=16, embedding_dim=128, channel_kernel=2, channel_stride=1, channel_dilation=1, temporal_kernel_size=2, temporal_stride=1, temporal_dilation=1, num_workers=10, itr=1, train_epochs=100, batch_size=32, patience=1, learning_rate=0.0001, des='test', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=False, top_k=5, decomp_method='moving_avg', use_norm=1, down_sampling_layers=3, down_sampling_window=2, down_sampling_method='avg', use_future_temporal_feature=0, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=1, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, channel_independence=0, cycle=24, model_type='mlp', mask_rate=0.25, anomaly_ratio=0.25, trials=20, use_optuna=True, multi_resolution=False, study_name=None, storage=None, n_trials=2, save_visualize=False)
+Starting Optuna optimization with 2 trials...
+args : Namespace(fix_seed=3000, task_name='long_term_forecast', is_training=1, train_only=False, model_id='test', model='DLinear', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=336, label_len=0, pred_len=96, embed_type=0, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, embed='timeF', output_attention=False, do_predict=False, seg_len=6, win_size=2, baseline=0, cross_factor=10, flash_attn=0, num_blocks=3, hidden_size=32, single_layer_mixer=False, activation='gelu', dropout=0.0, early_stopping=True, enc_in=7, norm='batch', excluded_component=0, patch_size=16, embedding_dim=128, channel_kernel=2, channel_stride=1, channel_dilation=1, temporal_kernel_size=2, temporal_stride=1, temporal_dilation=1, num_workers=10, itr=1, train_epochs=100, batch_size=32, patience=1, learning_rate=5.2122436504604685e-05, des='test', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=False, top_k=5, decomp_method='moving_avg', use_norm=1, down_sampling_layers=3, down_sampling_window=2, down_sampling_method='avg', use_future_temporal_feature=0, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=1, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, channel_independence=0, cycle=24, model_type='mlp', mask_rate=0.25, anomaly_ratio=0.25, trials=20, use_optuna=True, multi_resolution=False, study_name=None, storage=None, n_trials=2, save_visualize=False, dataset_name='ETTh1.csv_ETTh1.csv', trial_id=0, unique_id='0d34797a-bf19-470f-b0aa-a36a0da0fd6e')
+Use GPU: cuda:0
+>>>>>>>start training : test_DLinear_ETTh1.csv_ETTh1.csv_ftM_sl336_pl96_ll0_channelindependence0uid0d34797a-bf19-470f-b0aa-a36a0da0fd6e_tr0_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8209
+val 2785
+test 2785
+./checkpoints/test_DLinear_ETTh1.csv_ETTh1.csv_ftM_sl336_pl96_ll0_channelindependence0uid0d34797a-bf19-470f-b0aa-a36a0da0fd6e_tr0_0
+model has 12.063720703125 MB size and 3162432 params
+Initial GPU memory usage: 0.011781692504882812 GB
+	iters: 100, epoch: 1 | loss: 0.4076748
+	speed: 0.0096s/iter; left time: 243.7915s
+	iters: 200, epoch: 1 | loss: 0.3566065
+	speed: 0.0041s/iter; left time: 103.5372s
+Epoch: 1 cost time: 1.219559907913208
+Epoch: 1, Steps: 256 | Train Loss: 0.4762672 Vali Loss: 0.9883053 Test Loss: 0.8420203 Test MAE: 0.6871154
+Validation loss decreased (inf --> 0.988305).  Saving model ...
+Updating learning rate to 5.2122436504604685e-05
+	iters: 100, epoch: 2 | loss: 0.3687073
+	speed: 0.0152s/iter; left time: 383.3225s
+	iters: 200, epoch: 2 | loss: 0.3785544
+	speed: 0.0043s/iter; left time: 108.9624s
+Epoch: 2 cost time: 1.2519581317901611
+Epoch: 2, Steps: 256 | Train Loss: 0.3481513 Vali Loss: 0.9252334 Test Loss: 0.8276740 Test MAE: 0.6808456
+Validation loss decreased (0.988305 --> 0.925233).  Saving model ...
+Updating learning rate to 2.6061218252302343e-05
+	iters: 100, epoch: 3 | loss: 0.2701912
+	speed: 0.0151s/iter; left time: 376.4602s
+	iters: 200, epoch: 3 | loss: 0.3457306
+	speed: 0.0041s/iter; left time: 102.9086s
+Epoch: 3 cost time: 1.219498634338379
+Epoch: 3, Steps: 256 | Train Loss: 0.3209374 Vali Loss: 0.9072528 Test Loss: 0.8222150 Test MAE: 0.6779652
+Validation loss decreased (0.925233 --> 0.907253).  Saving model ...
+Updating learning rate to 1.3030609126151171e-05
+	iters: 100, epoch: 4 | loss: 0.2793352
+	speed: 0.0158s/iter; left time: 390.5253s
+	iters: 200, epoch: 4 | loss: 0.3079180
+	speed: 0.0041s/iter; left time: 101.3177s
+Epoch: 4 cost time: 1.2048606872558594
+Epoch: 4, Steps: 256 | Train Loss: 0.3112014 Vali Loss: 0.9022331 Test Loss: 0.8125806 Test MAE: 0.6732973
+Validation loss decreased (0.907253 --> 0.902233).  Saving model ...
+Updating learning rate to 6.515304563075586e-06
+	iters: 100, epoch: 5 | loss: 0.2998376
+	speed: 0.0160s/iter; left time: 390.5710s
+	iters: 200, epoch: 5 | loss: 0.3315273
+	speed: 0.0046s/iter; left time: 112.4191s
+Epoch: 5 cost time: 1.3229944705963135
+Epoch: 5, Steps: 256 | Train Loss: 0.3065216 Vali Loss: 0.8985131 Test Loss: 0.8077955 Test MAE: 0.6706859
+Validation loss decreased (0.902233 --> 0.898513).  Saving model ...
+Updating learning rate to 3.257652281537793e-06
+	iters: 100, epoch: 6 | loss: 0.3254244
+	speed: 0.0156s/iter; left time: 377.2509s
+	iters: 200, epoch: 6 | loss: 0.2680205
+	speed: 0.0045s/iter; left time: 107.8022s
+Epoch: 6 cost time: 1.2724816799163818
+Epoch: 6, Steps: 256 | Train Loss: 0.3044913 Vali Loss: 0.8960007 Test Loss: 0.8075704 Test MAE: 0.6705733
+Validation loss decreased (0.898513 --> 0.896001).  Saving model ...
+Updating learning rate to 1.6288261407688964e-06
+	iters: 100, epoch: 7 | loss: 0.2701180
+	speed: 0.0155s/iter; left time: 371.1133s
+	iters: 200, epoch: 7 | loss: 0.3002204
+	speed: 0.0044s/iter; left time: 105.4195s
+Epoch: 7 cost time: 1.2547059059143066
+Epoch: 7, Steps: 256 | Train Loss: 0.3033839 Vali Loss: 0.8956479 Test Loss: 0.8072187 Test MAE: 0.6704726
+Validation loss decreased (0.896001 --> 0.895648).  Saving model ...
+Updating learning rate to 8.144130703844482e-07
+	iters: 100, epoch: 8 | loss: 0.3217245
+	speed: 0.0158s/iter; left time: 375.4860s
+	iters: 200, epoch: 8 | loss: 0.2963753
+	speed: 0.0044s/iter; left time: 102.8819s
+Epoch: 8 cost time: 1.2480103969573975
+Epoch: 8, Steps: 256 | Train Loss: 0.3028889 Vali Loss: 0.8950757 Test Loss: 0.8071516 Test MAE: 0.6704542
+Validation loss decreased (0.895648 --> 0.895076).  Saving model ...
+Updating learning rate to 4.072065351922241e-07
+	iters: 100, epoch: 9 | loss: 0.2839893
+	speed: 0.0156s/iter; left time: 364.9635s
+	iters: 200, epoch: 9 | loss: 0.3056661
+	speed: 0.0043s/iter; left time: 99.3446s
+Epoch: 9 cost time: 1.2311861515045166
+Epoch: 9, Steps: 256 | Train Loss: 0.3026444 Vali Loss: 0.8954042 Test Loss: 0.8069580 Test MAE: 0.6703582
+EarlyStopping counter: 1 out of 1
+Early stopping
+>>>>>>>testing : test_DLinear_ETTh1.csv_ETTh1.csv_ftM_sl336_pl96_ll0_channelindependence0uid0d34797a-bf19-470f-b0aa-a36a0da0fd6e_tr0_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+loading model
+Loading checkpoint from: ./checkpoints/test_DLinear_ETTh1.csv_ETTh1.csv_ftM_sl336_pl96_ll0_channelindependence0uid0d34797a-bf19-470f-b0aa-a36a0da0fd6e_tr0_0/trial_0_checkpoint.pth
+mse:0.8062679171562195, mae:0.6708822846412659
+New best model found: Val Loss: 0.8955, Test Loss: 0.8063. Saved to ./best_models/best_model_336_96_DLinear_ETTh1.csv_ETTh1.csv_0.pth
+args : Namespace(fix_seed=3000, task_name='long_term_forecast', is_training=1, train_only=False, model_id='test', model='DLinear', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=512, label_len=0, pred_len=96, embed_type=0, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, embed='timeF', output_attention=False, do_predict=False, seg_len=6, win_size=2, baseline=0, cross_factor=10, flash_attn=0, num_blocks=3, hidden_size=32, single_layer_mixer=False, activation='gelu', dropout=0.0, early_stopping=True, enc_in=7, norm='batch', excluded_component=0, patch_size=16, embedding_dim=128, channel_kernel=2, channel_stride=1, channel_dilation=1, temporal_kernel_size=2, temporal_stride=1, temporal_dilation=1, num_workers=10, itr=1, train_epochs=100, batch_size=32, patience=1, learning_rate=0.00022581117138062746, des='test', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=False, top_k=5, decomp_method='moving_avg', use_norm=1, down_sampling_layers=3, down_sampling_window=2, down_sampling_method='avg', use_future_temporal_feature=0, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=1, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, channel_independence=0, cycle=24, model_type='mlp', mask_rate=0.25, anomaly_ratio=0.25, trials=20, use_optuna=True, multi_resolution=False, study_name=None, storage=None, n_trials=2, save_visualize=False, dataset_name='ETTh1.csv_ETTh1.csv', trial_id=1, unique_id='bb10cd9b-484e-4a59-855a-91f38f59ad30', ckpt_path='./checkpoints/test_DLinear_ETTh1.csv_ETTh1.csv_ftM_sl336_pl96_ll0_channelindependence0uid0d34797a-bf19-470f-b0aa-a36a0da0fd6e_tr0_0/trial_0_checkpoint.pth')
+Use GPU: cuda:0
+>>>>>>>start training : test_DLinear_ETTh1.csv_ETTh1.csv_ftM_sl512_pl96_ll0_channelindependence0uidbb10cd9b-484e-4a59-855a-91f38f59ad30_tr1_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8033
+val 2785
+test 2785
+./checkpoints/test_DLinear_ETTh1.csv_ETTh1.csv_ftM_sl512_pl96_ll0_channelindependence0uidbb10cd9b-484e-4a59-855a-91f38f59ad30_tr1_0
+model has 18.380126953125 MB size and 4818240 params
+Initial GPU memory usage: 0.03381919860839844 GB
+	iters: 100, epoch: 1 | loss: 0.2973920
+	speed: 0.0061s/iter; left time: 153.4150s
+	iters: 200, epoch: 1 | loss: 0.3086351
+	speed: 0.0054s/iter; left time: 133.3458s
+Epoch: 1 cost time: 1.4670634269714355
+Epoch: 1, Steps: 251 | Train Loss: 0.3823952 Vali Loss: 1.0156966 Test Loss: 1.0865097 Test MAE: 0.8029965
+Validation loss decreased (inf --> 1.015697).  Saving model ...
+Updating learning rate to 0.00022581117138062746
+	iters: 100, epoch: 2 | loss: 0.3193552
+	speed: 0.0172s/iter; left time: 424.5899s
+	iters: 200, epoch: 2 | loss: 0.3107057
+	speed: 0.0047s/iter; left time: 116.5982s
+Epoch: 2 cost time: 1.3233225345611572
+Epoch: 2, Steps: 251 | Train Loss: 0.2993602 Vali Loss: 1.0295057 Test Loss: 1.0649048 Test MAE: 0.7938964
+EarlyStopping counter: 1 out of 1
+Early stopping
+>>>>>>>testing : test_DLinear_ETTh1.csv_ETTh1.csv_ftM_sl512_pl96_ll0_channelindependence0uidbb10cd9b-484e-4a59-855a-91f38f59ad30_tr1_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+loading model
+Loading checkpoint from: ./checkpoints/test_DLinear_ETTh1.csv_ETTh1.csv_ftM_sl512_pl96_ll0_channelindependence0uidbb10cd9b-484e-4a59-855a-91f38f59ad30_tr1_0/trial_1_checkpoint.pth
+mse:1.0868024826049805, mae:0.8026422262191772
+Best Trial Number: 0
+Best Validation Loss (MSE): 0.895501
+HYPERPARAMETERS FOR BEST TRIAL:
+  - learning_rate: 5.2122436504604685e-05
+  - seq_len: 336
