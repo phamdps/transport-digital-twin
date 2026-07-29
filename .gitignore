@@ -1,0 +1,126 @@
+# ==============================================================================
+# Byte-compiled / optimized / DLL files
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ==============================================================================
+# Cextensions
+# ==============================================================================
+*.so
+
+# ==============================================================================
+# Distribution / packaging
+# ==============================================================================
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==============================================================================
+# Virtual Environments
+# ==============================================================================
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+conda/
+
+# ==============================================================================
+# Unit test / coverage reports
+# ==============================================================================
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# ==============================================================================
+# Environments, Secrets & Configs
+# ==============================================================================
+.env
+.env.local
+.env.*.local
+*.env
+*.pem
+*.key
+*.cert
+secrets.yaml
+config.local.yaml
+
+# ==============================================================================
+# Model Checkpoints & Large Data Files (GNNs / Datasets / GIS)
+# ==============================================================================
+# Model weights & checkpoints
+*.pth
+*.pt
+*.onnx
+*.bin
+*.h5
+*.ckpt
+
+# Large dataset files (GIS / Telemetry)
+*.geojson
+*.shp
+*.dbf
+*.prj
+*.shx
+*.gpkg
+*.parquet
+*.feather
+*.csv
+*.pcap
+
+# ==============================================================================
+# Jupyter Notebooks & Output Logs
+# ==============================================================================
+.ipynb_checkpoints
+*-checkpoint.ipynb
+*.log
+
+# ==============================================================================
+# IDEs & Code Editors
+# ==============================================================================
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# PyCharm / JetBrains
+.idea/
+
+# Mac OS metadata
+.DS_Store
+
+# Windows metadata
+Thumbs.db
+Desktop.ini
