@@ -37,7 +37,7 @@ As a virtual replica of the physical transportation system, the digital twin mir
 Create these files and folders in your project:
 
 ```text
-transportation-digital-twin/
+trans_digital_twin/
 ├── .github/
 │   └── ISSUE_TEMPLATE/
 ├── docs/
