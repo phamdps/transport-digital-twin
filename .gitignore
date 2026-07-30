@@ -124,3 +124,6 @@ config.local.yaml
 # Windows metadata
 Thumbs.db
 Desktop.ini
+
+# Extra
+xrefs/
