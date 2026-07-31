@@ -1,137 +1,189 @@
-# Transportation Digital Twin
+# 🚦 Multimodal Traffic Prediction via Shared Semantic Token Space (MLLM-Traffic)
 
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![PyTorch 2.4+](https://img.shields.io/badge/pytorch-2.4%2B-orange.svg)](https://pytorch.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## 1. Introduction
+> *"Recently, Multimodal Large Language Models (MLLMs) have introduced a new paradigm by mapping multimodal inputs into a shared semantic token space, enabling knowledge injection and unified generative reasoning for cross-modal and cross-task modeling."*
 
-Extreme weather events and natural disasters, such as floods and hurricanes, are increasingly disrupting critical infrastructure systems worldwide. Urban transportation networks, which are essential for evacuations, delivering emergency resources, and maintaining connectivity during crises, are particularly vulnerable. Recent hurricanes, which have caused widespread disruptions along the southern states and the U.S. East Coast, have underscored the fragility of these systems.
-
-Effectively planning for resilience and managing disruptions to transportation systems requires the use of computationally intensive transportation network models, which are often too resource-heavy and not scalable for real-time multi-scenario decision-making during disasters or for planning across regional networks. AI-powered digital twins for transportation networks offer a viable and effective tool to model and predict dynamic changes in mobility conditions, and support emergency planning and effective response
-
-## 2. Background & Challenges
-
-During disaster events, transportation networks experience rapid shifts in conditions due to flooded roads, severe traffic congestion, or damaged infrastructure. Traditional approaches for network modeling tasks—such as shortest path estimation and traffic assignment—struggle to capture these dynamic changes across multiple scenarios. Because these legacy methods are computationally intensive and rely heavily on static data, their lack of real-time adaptability leads to delays in emergency responses, inefficient evacuation routes, and heightened risks to public safety.
-
-Key challenges include:
-
-* **⚡ Computational Inefficiency:** Traditional routing and traffic assignment algorithms struggle to scale efficiently for large urban networks and multi-disruption scenarios, requiring significant processing time and delaying critical decision-making.
-* **🌊 Dynamic Disruptions:** Disasters introduce frequent, unpredictable changes—such as flooding, accidents, or debris—causing network topology to change rapidly and rendering static models ineffective.
-* **📡 Limited Integration of Real-Time Data:** Legacy transportation models lack the architecture to ingest live telemetry from diverse sources (e.g., traffic sensors, drones, satellite feeds) to reflect current ground-truth conditions.
+**MLLM-Traffic** is an open-source framework for urban mobility prediction that eliminates handcrafted fusion schemes and task-specific modular architectures. By converting continuous sensor time-series, non-Euclidean road graphs, visual feeds, and natural language context into a unified high-dimensional token space ($d_{\text{llm}}$), it enables a single frozen LLM backbone to perform multi-task forecasting, missing data imputation, anomaly reasoning, and counterfactual scenario simulations.
 
 ---
 
-## 💡 Proposed Solution & Core Capabilities
+## 🏗 System Architecture & Paradigm Mapping
 
-To address these challenges, we developed an **AI-powered Digital Twin for Transportation Networks** using **Graph Neural Networks (GNNs)** to model and predict mobility conditions amidst dynamic network changes. 
+The repository structure directly operationalizes the four core pillars of the MLLM paradigm:
 
-As a virtual replica of the physical transportation system, the digital twin mirrors real-world behavior by continuously fusing static infrastructure graphs with real-time sensor streams. It equips asset managers and emergency planners with real-time impact assessments, interactive monitoring, and scenario optimization for rapid, data-driven disaster response.
 
-### Core Capabilities
+```
 
-* **🛣️ Shortest Path Estimation:** Leverages GNNs to predict optimal routes across dynamically changing networks. By utilizing node and edge embeddings that incorporate features like road lengths and live flood levels, the system updates shortest paths in real time without heavy computational overhead.
-* **🚦 Dynamic Traffic Assignment (DTA):** Dynamically assigns traffic loads based on shifting demand and real-time network conditions, offering actionable insights into emerging congestion patterns and optimal rerouting options.
-* **📡 Real-Time Data Fusion:** Ingests remote sensing data (e.g., satellite flood maps, drone feeds) and IoT sensor streams to continuously update network topology and reflect current hazards accurately.
-* **🔮 Scenario Simulation & Resilience Modeling:** Simulates severe hazard scenarios (e.g., hurricanes, localized flooding) to evaluate network resilience, stress-test infrastructure vulnerabilities, and optimize evacuation strategies before impact.
-
-## 3. Directory Structure
-
-Create these files and folders in your project:
-
-```text
-trans_digital_twin/
-├── .github/
-│   └── ISSUE_TEMPLATE/
-├── docs/
-│   └── architecture.md
-├── src/
-│   ├── ingestion/       # Real-time IoT / GTFS data stream pipelines
-│   ├── simulation/      # SUMO / SUMO-GUI traffic models
-│   ├── twin_engine/     # Graph-based network model & state updates
-│   └── visualization/   # 3D spatial UI (Deck.gl / Three.js / Cesium)
-├── tests/
-├── .gitignore
-├── LICENSE
-└── README.md
++-----------------------------------------------------------------------------------+
+| 1. MULTIMODAL INPUT MAPPING (`models/tokenizers/` & `data/loaders/`)              |
+|  [Sensor Time-Series]   [Road Graph Topology]   [CCTV Visual Feeds]   [Text Logs] |
++-------------------+-------------------+-------------------+-------------------+
+|                   |                   |
+v                   v                   v
++-----------------------------------------------------------------------------------+
+| 2. SHARED SEMANTIC TOKEN SPACE (`models/space/`)                                  |
+|  [ Temporal Patches ] + [ Graph LapPE Encodings ] + [ Latent Alignment Projection ]|
++---------------------------------------+-------------------------------------------+
+|
+v
++-----------------------------------------------------------------------------------+
+| 3. KNOWLEDGE INJECTION (`models/injection/`)                                      |
+|  Interleaving text context (Weather, Accidents, Events) + LoRA Domain Adapters    |
++---------------------------------------+-------------------------------------------+
+|
+v
++-----------------------------------------------------------------------------------+
+| 4. UNIFIED GENERATIVE REASONING (`models/backbone/` & `tasks/`)                   |
+|  Cross-Modal & Cross-Task Generation: Forecasting, Imputation, Root-Cause Analysis|
++-----------------------------------------------------------------------------------+
 
 ```
 
 ---
 
-## 4. Quick Start
+## 🛠 Project Structure
 
-### Prerequisites
-
-* **Python:** `3.10` or higher
-* **Node.js:** `v18+` (for the web visualizer)
-* **Docker & Docker Compose** (for Kafka and spatial databases)
-
-### 1. Clone the Repository
-
-```bash
-git clone [https://github.com/phamdps/trans_digital_twin.git](https://github.com/phamdps/trans_digital_twin.git)
-cd trans_digital_twin
 
 ```
 
-### 2. Start Infrastructure
-
-Launch Kafka, PostgreSQL/PostGIS, and Redis services:
-
-```bash
-docker-compose up -d
+multimodal-traffic-mllm/
+├── config/                         # Configuration management
+│   ├── model_config.yaml           # LLM backbone & token embedding dimensions (d_llm)
+│   ├── tokenizers.yaml             # Patch size, LapPE dimensions, vision encoders
+│   └── tasks/                      # Task-specific prompts & target parameters
+│       ├── forecasting.yaml        # Generative spatio-temporal forecasting specs
+│       ├── imputation.yaml         # Masked token reconstruction parameters
+│       └── root_cause.yaml         # Anomaly explanation & incident analysis specs
+│
+├── data/                           # Data loading & preprocessing pipelines
+│   ├── loaders/                    # Modality-specific data ingestion
+│   │   ├── sensor_loader.py        # Loop detector, GPS, and floating-car time series
+│   │   ├── graph_loader.py         # Road network adjacency & topology loading
+│   │   ├── vision_loader.py        # CCTV and camera feed preprocessors
+│   │   └── text_loader.py          # Weather, accident logs, and event text alerts
+│   └── processors/                 # Spatiotemporal alignment & masking utilities
+│       ├── spatial_aligner.py      # Map spatial coordinates to graph node IDs
+│       └── masking_utils.py        # Dynamic mask generation for missing sensor data
+│
+├── models/                         # Model components & embedding architecture
+│   ├── tokenizers/                 # 1. MULTIMODAL INPUT MAPPING TO TOKENS
+│   │   ├── temporal_patch.py       # 1D-Conv patchification for continuous time-series
+│   │   ├── graph_tokenizer.py      # Laplacian Positional Encodings (LapPE) + ST-GNN
+│   │   └── vision_tokenizer.py     # ViT patch projection heads
+│   │
+│   ├── space/                      # 2. SHARED SEMANTIC TOKEN SPACE
+│   │   ├── latent_aligner.py       # Linear/MLP projection heads to d_llm
+│   │   ├── positional_embeds.py    # Time-of-day, day-of-week & spatial PE fusion
+│   │   └── contrastive_loss.py     # InfoNCE & physics alignment loss modules
+│   │
+│   ├── injection/                  # 3. KNOWLEDGE INJECTION MODULES
+│   │   ├── prompt_builder.py       # Interleaving context text + spatial-temporal tokens
+│   │   └── lora_adapters.py        # Parameter-efficient adapters for domain injection
+│   │
+│   └── backbone/                   # 4. UNIFIED GENERATIVE REASONING ENGINE
+│       ├── mllm_wrapper.py         # Frozen LLM wrapper (Llama-3 / Qwen-2 / Mistral)
+│       └── unified_decoder.py      # Autoregressive generation for cross-modal output
+│
+├── tasks/                          # 5. CROSS-TASK & CROSS-MODAL EXECUTORS
+│   ├── forecast_executor.py        # Multi-step speed/flow generative forecasting
+│   ├── imputation_executor.py      # Reconstructing missing sensor values via LLM context
+│   ├── incident_reasoner.py        # Root-cause analysis & natural language explanations
+│   └── counterfactual_sim.py       # "What-if" scenario simulation runner
+│
+├── scripts/                        # Training & evaluation routines
+│   ├── train_stage1_align.py       # Stage 1: Pre-training token projection alignment
+│   ├── train_stage2_instruct.py    # Stage 2: Instruction fine-tuning (LoRA)
+│   └── evaluate_cross_task.py      # Unified evaluation across forecasting & reasoning
+│
+├── notebooks/                      # Interactive tutorials & demos
+│   ├── 01_token_space_viz.ipynb    # Visualizing cross-modal alignment in latent space
+│   └── 02_cross_task_demo.ipynb    # End-to-end inference across multiple tasks
+│
+├── requirements.txt                # Dependencies (PyTorch, PyG, Transformers, PEFT)
+├── setup.py                        # Package installation script
+└── README.md                       # Main project documentation
 
 ```
 
-### 3. Set Up Python Environment
+---
+
+## ⚡ Quickstart
+
+### 1. Installation
 
 ```bash
+# Clone the repository
+git clone [https://github.com/your-org/multimodal-traffic-mllm.git](https://github.com/your-org/multimodal-traffic-mllm.git)
+cd multimodal-traffic-mllm
 
-python -m venv venv
-source venv/bin/activate  
+# Create conda environment
+conda create -n mllm_traffic python=3.10 -y
+conda activate mllm_traffic
+
+# Install dependencies
 pip install -r requirements.txt
+pip install -e .
 
 ```
 
-### 4. Run the Digital Twin Engine
+### 2. Pre-stage Data Preparation
+
+Prepare benchmark datasets (e.g., PeMS-BAY, METR-LA) and compute graph Laplacian embeddings:
 
 ```bash
-python src/twin_engine/main.py --config config/dev.yaml
+python data/processors/spatial_aligner.py --dataset METR-LA --output_dir ./data/processed/
+
+```
+
+### 3. Usage Example
+
+Execute unified cross-modal inference using the shared semantic space:
+
+```python
+from models.backbone.mllm_wrapper import MLLMBackbone
+from models.injection.prompt_builder import MultimodalPromptBuilder
+from data.loaders.sensor_loader import LoadSensorStream
+from data.loaders.graph_loader import LoadRoadGraph
+
+# 1. Initialize MLLM Backbone & Token Projection Space
+model = MLLMBackbone.from_pretrained("config/model_config.yaml")
+
+# 2. Ingest Multimodal Physical Inputs
+sensor_tokens = LoadSensorStream("./data/processed/pems_speed.pt")
+graph_tokens = LoadRoadGraph("./data/processed/metr_la_lappe.pkl")
+
+# 3. Inject Context & Construct Multimodal Prompt Sequence
+prompt_builder = MultimodalPromptBuilder()
+inputs = prompt_builder.build(
+    text_context="Weather: Heavy Rain. Incident: Vehicle breakdown at Junction 12.",
+    sensor_data=sensor_tokens,
+    graph_topology=graph_tokens,
+    task="forecasting_and_explanation"
+)
+
+# 4. Perform Unified Generative Reasoning
+output = model.generate(inputs, max_new_tokens=256)
+print("Unified Cross-Modal Result:")
+print(output)
 
 ```
 
 ---
 
-## 📊 Configuration
+## 🏋️ Training Pipeline
 
-Configuration settings are stored in `config/default.yaml`. Update your API keys (Mapbox tile tokens, GTFS feed endpoints) before launching:
+The framework uses a two-stage training paradigm:
 
-```yaml
-telemetry:
-  gtfs_rt_url: "[https://api.yourcity.gov/gtfs-rt/positions](https://api.yourcity.gov/gtfs-rt/positions)"
-  poll_interval_sec: 5
-
-visualization:
-  mapbox_token: "YOUR_MAPBOX_ACCESS_TOKEN"
-  initial_viewport:
-    latitude: 48.8566
-    longitude: 2.3522
-    zoom: 12
-
-```
+1. **Stage 1: Modality Alignment (`scripts/train_stage1_align.py`)**
+Trains the linear/MLP projection heads in `models/space/latent_aligner.py` using contrastive alignment (InfoNCE) to map sensor time-series patches and graph LapPE embeddings into the LLM embedding space ($d_{\text{llm}}$).
+2. **Stage 2: Instruction Tuning (`scripts/train_stage2_instruct.py`)**
+Fine-tunes Low-Rank Adaptation (LoRA) adapters (`models/injection/lora_adapters.py`) on instruction datasets to perform joint forecasting, imputation, and natural language reasoning.
 
 ---
 
-## 🤝 Contributing
+## 📄 License
 
-Contributions are welcome! Please check out [CONTRIBUTING.md](https://www.google.com/search?q=docs/CONTRIBUTING.md) for guidelines on branch naming, pull requests, and coding standards.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📜 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+This project is released under the [MIT License](https://www.google.com/search?q=LICENSE).
