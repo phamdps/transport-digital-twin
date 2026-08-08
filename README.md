@@ -1,67 +1,476 @@
-# Multimodal Transportation Digital Twin
+<div align="center">
 
-A progressive, 5-level digital twin framework for modeling, monitoring, simulating, and optimizing complex urban transportation networks.
+# 🚇 Multimodal Transportation Digital Twin
 
----
+### A Progressive 5-Level Framework for Modeling, Monitoring, Simulating, Predicting, and Optimizing Complex Urban Transportation Networks
 
-## 🏗️ Project Maturity Roadmap
+<br>
 
-This project evolves through 5 distinct digital twin maturity levels, transitioning from static spatial representation to closed-loop autonomous control:
+**From Static Maps → Real-Time Awareness → Prediction → Simulation → Autonomous Control**
 
-1. **Level 1: Descriptive / Monitoring Digital Twin** (`/level-1-descriptive`)
-   - **Core Focus:** Spatial Mapping & Representation.
-   - **Key Features:** GIS networks, OpenStreetMap (OSM) road links, station coordinates, and static transit infrastructure graphs.
-2. **Level 2: Informative / Real-Time Operational Twin** (`/level-2-realtime`)
-   - **Core Focus:** Sensing & Real-Time Ingestion.
-   - **Key Features:** Live GTFS-Realtime feeds, traffic sensor streams, and real-time operational status dashboards.
-3. **Level 3: Predictive Digital Twin** (`/level-3-predictive`)
-   - **Core Focus:** Inference & Machine Learning.
-   - **Key Features:** ETA forecasting models, passenger demand prediction, and traffic congestion trend analysis.
-4. **Level 4: Comprehensive Digital Twin** (`/level-4-comprehensive`)
-   - **Core Focus:** Simulation & Modeling.
-   - **Key Features:** Micro/meso-scopic traffic simulations (e.g., SUMO) and disruption "what-if" scenario analysis.
-5. **Level 5: Autonomous / Adaptive Digital Twin** (`/level-5-autonomous`)
-   - **Core Focus:** Agentic AI & Decision Control.
-   - **Key Features:** Dynamic traffic signal optimization and automated multimodal rerouting loops.
+<br>
+
+![Digital Twin](https://img.shields.io/badge/Digital%20Twin-5%20Levels-6366F1?style=for-the-badge)
+![Transportation](https://img.shields.io/badge/Transportation-Multimodal-0EA5E9?style=for-the-badge)
+![AI](https://img.shields.io/badge/AI-Predictive%20%26%20Autonomous-8B5CF6?style=for-the-badge)
+![Simulation](https://img.shields.io/badge/Simulation-SUMO-10B981?style=for-the-badge)
+
+</div>
 
 ---
 
-## 🏛️ Architecture & Documentation
+## 🌆 Overview
+
+The **Multimodal Transportation Digital Twin** is a progressive five-level framework for creating a living digital representation of a complex urban transportation network.
+
+The system evolves from a **static spatial representation** into a **real-time, predictive, simulation-driven, and eventually autonomous transportation intelligence platform**.
+
+It brings together:
+
+* 🗺️ **GIS & OpenStreetMap**
+* 🚌 **Public Transit & GTFS / GTFS-Realtime**
+* 🚗 **Road Traffic & Mobility Sensors**
+* 📡 **Real-Time Data Streaming**
+* 🤖 **Machine Learning & Predictive Analytics**
+* 🧪 **Traffic Simulation & What-If Analysis**
+* 🎯 **Optimization & Autonomous Decision-Making**
+
+The ultimate goal is a closed-loop system capable of **observing the physical city, understanding its current state, predicting future conditions, testing interventions, and optimizing transportation operations**.
+
+---
+
+# 🏗️ Digital Twin Maturity Roadmap
+
+The project progresses through five distinct digital twin maturity levels, moving from spatial representation toward autonomous transportation control.
 
 ```mermaid
+flowchart TB
 
-graph TD
-    classDef level fill:#f9f,stroke:#333,stroke-width:2px;
-    
-    Physical[🏙️ Physical Urban Network / City] --> L1
-    
-    subgraph 5-Level Digital Twin Architecture
-        L1[<b>Level 1: Descriptive</b><br/>Spatial GIS & OSM Graph] --> L2
-        L2[<b>Level 2: Informative</b><br/>Live GTFS-RT & Sensor Streams] --> L3
-        L3[<b>Level 3: Predictive</b><br/>ML Forecasting & ETAs] --> L4
-        L4[<b>Level 4: Comprehensive</b><br/>Micro-Simulation & What-If Scenarios] --> L5
-        L5[<b>Level 5: Autonomous</b><br/>Closed-Loop Control & Optimization]
-    end
+    CITY["🏙️ Physical Urban Network<br/>Roads • Transit • Vehicles • Sensors"]
 
-    L5 -.->|Automated Feedback Loop| Physical
+    L1["🗺️ LEVEL 1 · DESCRIPTIVE<br/><br/>Spatial Mapping & Representation<br/><br/>GIS • OSM • Infrastructure • Network Graphs"]
 
+    L2["📡 LEVEL 2 · INFORMATIVE<br/><br/>Real-Time Operational Awareness<br/><br/>GTFS-RT • Sensors • Streaming • Live Status"]
+
+    L3["🔮 LEVEL 3 · PREDICTIVE<br/><br/>Forecasting & Machine Learning<br/><br/>ETA • Demand • Congestion • Anomaly Prediction"]
+
+    L4["🧪 LEVEL 4 · COMPREHENSIVE<br/><br/>Simulation & What-If Analysis<br/><br/>SUMO • Scenarios • Disruptions • Interventions"]
+
+    L5["🤖 LEVEL 5 · AUTONOMOUS<br/><br/>Adaptive Decision & Control<br/><br/>AI Agents • Optimization • Feedback"]
+
+    LOOP["🔄 CLOSED-LOOP INTELLIGENCE<br/><br/>Observe → Predict → Simulate → Optimize → Act"]
+
+    CITY --> L1
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> LOOP
+    LOOP -.-> CITY
+
+    classDef physical fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px,color:#1b1b1b;
+    classDef level1 fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#1b1b1b;
+    classDef level2 fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#1b1b1b;
+    classDef level3 fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#1b1b1b;
+    classDef level4 fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#1b1b1b;
+    classDef level5 fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#1b1b1b;
+    classDef loop fill:#f3f4f6,stroke:#374151,stroke-width:3px,color:#1b1b1b;
+
+    class CITY physical;
+    class L1 level1;
+    class L2 level2;
+    class L3 level3;
+    class L4 level4;
+    class L5 level5;
+    class LOOP loop;
 ```
 
 ---
 
-## 📁 Repository Structure
+## 🧭 Five-Level Architecture
+
+|  Level | Maturity             | Core Focus             | Key Capabilities                          |
+| :----: | :------------------- | :--------------------- | :---------------------------------------- |
+| **01** | 🗺️ **Descriptive**  | Spatial Representation | GIS, OSM, network graphs                  |
+| **02** | 📡 **Informative**   | Real-Time Awareness    | GTFS-RT, sensors, live dashboards         |
+| **03** | 🔮 **Predictive**    | Forecasting & ML       | ETA, demand, congestion prediction        |
+| **04** | 🧪 **Comprehensive** | Simulation             | SUMO, scenarios, disruption analysis      |
+| **05** | 🤖 **Autonomous**    | Decision & Control     | Optimization, rerouting, adaptive control |
+
+---
+
+# 🗺️ Level 1 — Descriptive Digital Twin
+
+### Spatial Mapping & Infrastructure Representation
+
+Level 1 establishes the spatial foundation of the transportation digital twin.
+
+### Key Features
+
+* 🛣️ OpenStreetMap road networks
+* 🚉 Transit stations and stops
+* 🗺️ GIS-based infrastructure visualization
+* 🔗 Multimodal network graphs
+* 📍 Geographic asset inventories
+* ⚠️ Infrastructure vulnerability analysis
+* 🏙️ Static transportation topology
+
+### Primary Output
+
+> A complete spatial representation of the transportation system.
+
+---
+
+# 📡 Level 2 — Informative Digital Twin
+
+### Real-Time Operational Awareness
+
+Level 2 connects the digital twin to the continuously changing physical transportation network.
+
+### Key Features
+
+* 🚌 GTFS-Realtime vehicle positions
+* ⏱️ Live arrival and departure information
+* 🚦 Traffic sensor streams
+* 🚧 Incident and disruption monitoring
+* 📊 Real-time operational dashboards
+* 🔴 Fleet status monitoring
+* 📡 Streaming transportation data
+
+### Primary Output
+
+> A continuously updated operational view of the city.
+
+---
+
+# 🔮 Level 3 — Predictive Digital Twin
+
+### Forecasting & Machine Learning
+
+Level 3 moves from understanding **what is happening now** to predicting **what is likely to happen next**.
+
+### Key Features
+
+* ⏱️ ETA forecasting
+* 👥 Passenger demand prediction
+* 🚗 Congestion forecasting
+* 🚌 Delay prediction
+* 🛣️ Travel-time prediction
+* 🧠 Anomaly detection
+* 🔀 Predictive routing
+
+### Primary Output
+
+> Forward-looking transportation intelligence.
+
+---
+
+# 🧪 Level 4 — Comprehensive Digital Twin
+
+### Simulation & What-If Analysis
+
+Level 4 introduces a virtual transportation laboratory where interventions can be evaluated before they are applied to the real network.
+
+### Key Features
+
+* 🚗 Microscopic traffic simulation
+* 🛣️ Mesoscopic transportation modeling
+* 🧪 SUMO integration
+* 🚧 Disruption scenarios
+* 🚦 Traffic signal experiments
+* 🔀 Alternative routing strategies
+* 📈 Policy and intervention evaluation
+
+### Example Questions
+
+**What happens if a major arterial road is closed?**
+
+**What happens if a metro line experiences a 20-minute disruption?**
+
+**How does a change in traffic signal timing affect network-wide congestion?**
+
+**Which rerouting strategy minimizes passenger delay?**
+
+### Primary Output
+
+> A simulation environment for evaluating transportation decisions before deployment.
+
+---
+
+# 🤖 Level 5 — Autonomous Digital Twin
+
+### Agentic AI, Optimization & Closed-Loop Control
+
+Level 5 transforms the digital twin from an analytical platform into an adaptive decision-making system.
+
+### Key Features
+
+* 🚦 Dynamic traffic signal optimization
+* 🔀 Automated multimodal rerouting
+* 🤖 AI-based decision agents
+* ⚡ Real-time optimization
+* 🎯 Network-wide objective optimization
+* 🔄 Closed-loop feedback
+* 🧠 Adaptive transportation control
+
+### Primary Output
+
+> An adaptive transportation intelligence system capable of recommending and eventually executing optimized interventions.
+
+---
+
+# 🔄 Closed-Loop Intelligence
+
+The final architecture connects the digital twin back to the physical transportation network.
+
+```mermaid
+flowchart LR
+
+    WORLD["🏙️ REAL WORLD<br/>Roads • Transit • Vehicles"]
+
+    OBSERVE["👁️ OBSERVE<br/><br/>GTFS-RT<br/>Traffic Sensors<br/>IoT • Events"]
+
+    PREDICT["🔮 PREDICT<br/><br/>ML Models<br/>ETA • Demand<br/>Congestion"]
+
+    SIMULATE["🧪 SIMULATE<br/><br/>SUMO<br/>What-If Scenarios<br/>Disruption Models"]
+
+    OPTIMIZE["🎯 OPTIMIZE<br/><br/>AI Agents<br/>Control<br/>Optimization"]
+
+    ACT["⚡ ACT<br/><br/>Traffic Signals<br/>Routing<br/>Operations"]
+
+    WORLD --> OBSERVE
+    OBSERVE --> PREDICT
+    PREDICT --> SIMULATE
+    SIMULATE --> OPTIMIZE
+    OPTIMIZE --> ACT
+    ACT --> WORLD
+
+    classDef world fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px;
+    classDef observe fill:#e0f2fe,stroke:#0284c7,stroke-width:2px;
+    classDef predict fill:#ede9fe,stroke:#7c3aed,stroke-width:2px;
+    classDef simulate fill:#fef3c7,stroke:#d97706,stroke-width:2px;
+    classDef optimize fill:#fce7f3,stroke:#db2777,stroke-width:2px;
+    classDef act fill:#dcfce7,stroke:#16a34a,stroke-width:3px;
+
+    class WORLD world;
+    class OBSERVE observe;
+    class PREDICT predict;
+    class SIMULATE simulate;
+    class OPTIMIZE optimize;
+    class ACT act;
+```
+
+---
+
+# 📸 Digital Twin Command Center
+
+The project includes visual snapshots demonstrating the evolution of the digital twin across its first three maturity levels.
+
+<div align="center">
+
+## Level 1 — Network Topology & Infrastructure
+
+<img src="results/Level_1.png" alt="Level 1 Digital Twin Dashboard" width="900">
+
+**Descriptive Digital Twin**
+
+*Spatial network topology, infrastructure representation, and vulnerability analysis.*
+
+</div>
+
+---
+
+<div align="center">
+
+## Level 2 — Real-Time Operational Fleet Control Center
+
+<img src="results/Level_2.png" alt="Level 2 Digital Twin Dashboard" width="900">
+
+**Informative Digital Twin**
+
+*Live fleet operations, vehicle positions, network status, and real-time monitoring.*
+
+</div>
+
+---
+
+<div align="center">
+
+## Level 3 — Predictive Routing & Disruption Simulator
+
+<img src="results/Level_3.png" alt="Level 3 Digital Twin Dashboard" width="900">
+
+**Predictive Digital Twin**
+
+*Predictive routing, congestion forecasting, and disruption scenario analysis.*
+
+</div>
+
+---
+
+# 🖥️ Command Center Evolution
+
+The dashboards progressively evolve with the maturity of the digital twin.
+
+```mermaid
+flowchart LR
+
+    L1["🗺️ LEVEL 1<br/><br/><b>SEE THE CITY</b><br/><br/>Network topology<br/>Infrastructure<br/>Assets"]
+
+    L2["📡 LEVEL 2<br/><br/><b>SEE WHAT IS HAPPENING</b><br/><br/>Live fleet<br/>Operations<br/>Network status"]
+
+    L3["🔮 LEVEL 3<br/><br/><b>UNDERSTAND WHAT HAPPENS NEXT</b><br/><br/>Prediction<br/>Forecasting<br/>Routing"]
+
+    L4["🧪 LEVEL 4<br/><br/><b>TEST WHAT COULD HAPPEN</b><br/><br/>Simulation<br/>Scenarios<br/>Interventions"]
+
+    L5["🤖 LEVEL 5<br/><br/><b>DECIDE & ACT</b><br/><br/>Optimization<br/>Control<br/>Autonomous actions"]
+
+    L1 --> L2 --> L3 --> L4 --> L5
+
+    classDef l1 fill:#ede9fe,stroke:#7c3aed,stroke-width:2px;
+    classDef l2 fill:#e0f2fe,stroke:#0284c7,stroke-width:2px;
+    classDef l3 fill:#fef3c7,stroke:#d97706,stroke-width:2px;
+    classDef l4 fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+    classDef l5 fill:#fce7f3,stroke:#db2777,stroke-width:2px;
+
+    class L1 l1;
+    class L2 l2;
+    class L3 l3;
+    class L4 l4;
+    class L5 l5;
+```
+
+---
+
+# 📁 Repository Structure
 
 ```text
 transport-digital-twin/
-├── data/                       # Shared datasets and GIS maps
-│   ├── raw/                    # Raw unprocessed data (GTFS, OSM extracts)
-│   └── processed/              # Cleaned and processed datasets
-├── docs/                       # Architecture diagrams and specifications
-│   └── architecture-mapping.md
-├── level-1-descriptive/        # Level 1: Static spatial model & baseline visualization
-├── level-2-realtime/           # Level 2: Real-time streams & dashboard
-├── level-3-predictive/         # Level 3: ML forecasting models
-├── level-4-comprehensive/      # Level 4: Comprehensive simulation & scenario twin
-├── level-5-autonomous/         # Level 5: Automated optimization & feedback loops
-├── scripts/                    # Reusable utility scripts
-└── README.md                   # Project overview and instructions
+│
+├── 📂 data/
+│   ├── raw/                       # Raw GTFS, OSM & sensor data
+│   └── processed/                 # Cleaned and processed datasets
+│
+├── 📂 docs/
+│   └── architecture-mapping.md    # Architecture & specifications
+│
+├── 📂 level-1-descriptive/        # 🗺️ Static spatial model
+│
+├── 📂 level-2-realtime/           # 📡 Real-time streams & dashboard
+│
+├── 📂 level-3-predictive/         # 🔮 ML forecasting models
+│
+├── 📂 level-4-comprehensive/      # 🧪 Simulation & scenario twin
+│
+├── 📂 level-5-autonomous/         # 🤖 Optimization & feedback loops
+│
+├── 📂 results/                    # 📸 Dashboard snapshots
+│   ├── Level_1.png
+│   ├── Level_2.png
+│   └── Level_3.png
+│
+├── 📂 scripts/                    # Reusable utility scripts
+│
+└── 📄 README.md                   # Project overview
+```
+
+---
+
+# 🔗 Core Data & Intelligence Pipeline
+
+```mermaid
+flowchart TB
+
+    DATA["📦 DATA SOURCES<br/><br/>OpenStreetMap<br/>GTFS / GTFS-RT<br/>Traffic Sensors<br/>IoT • Events"]
+
+    INGEST["📥 DATA INGESTION<br/><br/>ETL • APIs<br/>Streaming • Validation"]
+
+    TWIN["🗺️ DIGITAL TWIN<br/><br/>Spatial Model<br/>Network Graph<br/>Infrastructure"]
+
+    STATE["📡 REAL-TIME STATE<br/><br/>Vehicles<br/>Delays • Incidents<br/>Network Conditions"]
+
+    ML["🔮 PREDICTIVE AI<br/><br/>ETA<br/>Demand<br/>Congestion"]
+
+    SIM["🧪 SIMULATION<br/><br/>SUMO<br/>What-If Scenarios<br/>Disruption Models"]
+
+    OPT["🎯 OPTIMIZATION<br/><br/>AI Agents<br/>Control<br/>Routing"]
+
+    ACTION["⚡ ACTION<br/><br/>Signals<br/>Routes<br/>Operations"]
+
+    DATA --> INGEST
+    INGEST --> TWIN
+    TWIN --> STATE
+    STATE --> ML
+    ML --> SIM
+    SIM --> OPT
+    OPT --> ACTION
+
+    ACTION -.-> STATE
+
+    classDef data fill:#e0f2fe,stroke:#0284c7,stroke-width:2px;
+    classDef twin fill:#ede9fe,stroke:#7c3aed,stroke-width:2px;
+    classDef realtime fill:#fef3c7,stroke:#d97706,stroke-width:2px;
+    classDef ai fill:#fce7f3,stroke:#db2777,stroke-width:2px;
+    classDef sim fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+    classDef action fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px;
+
+    class DATA,INGEST data;
+    class TWIN twin;
+    class STATE realtime;
+    class ML ai;
+    class SIM sim;
+    class OPT ai;
+    class ACTION action;
+```
+
+---
+
+# 🎯 Project Vision
+
+The ultimate objective is to create a transportation digital twin capable of continuously answering six increasingly sophisticated questions:
+
+```mermaid
+flowchart LR
+
+    Q1["🗺️ What is happening?"]
+    Q2["📡 What is happening<br/>right now?"]
+    Q3["🔮 What will happen<br/>next?"]
+    Q4["🧪 What could happen<br/>if we intervene?"]
+    Q5["🎯 What should<br/>we do?"]
+    Q6["🤖 Can the system<br/>act automatically?"]
+
+    Q1 --> Q2 --> Q3 --> Q4 --> Q5 --> Q6
+
+    classDef q1 fill:#ede9fe,stroke:#7c3aed,stroke-width:2px;
+    classDef q2 fill:#e0f2fe,stroke:#0284c7,stroke-width:2px;
+    classDef q3 fill:#fef3c7,stroke:#d97706,stroke-width:2px;
+    classDef q4 fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+    classDef q5 fill:#fce7f3,stroke:#db2777,stroke-width:2px;
+    classDef q6 fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px;
+
+    class Q1 q1;
+    class Q2 q2;
+    class Q3 q3;
+    class Q4 q4;
+    class Q5 q5;
+    class Q6 q6;
+```
+
+This progression transforms raw transportation data into:
+
+**Situational Awareness → Prediction → Simulation → Optimization → Autonomous Decision-Making**
+
+---
+
+<div align="center">
+
+# 🚇 From Mapping the City to Operating the City
+
+### Observe → Understand → Predict → Simulate → Optimize → Adapt
+
+<br>
+
+**Multimodal Transportation Digital Twin**
+
+</div>
+

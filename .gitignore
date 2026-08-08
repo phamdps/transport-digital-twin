@@ -6,39 +6,8 @@ __pycache__/
 env/
 venv/
 
-# Jupyter Notebooks
-.ipynb_checkpoints
-
-# Caches & Logs
-.cache/
-*.log
-logs/
-
-# IDEs & OS
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-
-# Large Data & Model Weights (Keep structure via .gitkeep)
-data/raw/*
-!data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
-*.h5
-*.pkl
-*.pt
-*.onnx
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-.venv/
-env/
-venv/
-
-# Jupyter Notebooks
-.ipynb_checkpoints
+# Jupyter
+.ipynb_checkpoints/
 
 # Caches & Logs
 .cache/
@@ -52,16 +21,20 @@ logs/
 .DS_Store
 Thumbs.db
 
-# Large Data & Model Weights (Keep structure via .gitkeep)
-data/raw/*
-!data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
+# Data
+data/
+
+# Model weights
 *.h5
 *.pkl
 *.pt
 *.onnx
-GITIGNORE
 
-# Extra files
-docs/*
+# Documentation
+docs/
+
+# Dashboards
+dashboards/
+
+# Scripts
+scripts/
