@@ -46,7 +46,7 @@ The project progresses through five distinct digital twin maturity levels, movin
 ```mermaid
 flowchart TB
 
-    CITY["🏙️ Physical Urban Network<br/>Roads • Transit • Vehicles • Sensors"]
+    CITY["🏙️ PHYSICAL URBAN NETWORK<br/><br/>Roads • Transit • Vehicles • Sensors"]
 
     L1["🗺️ LEVEL 1 · DESCRIPTIVE<br/><br/>Spatial Mapping & Representation<br/><br/>GIS • OSM • Infrastructure • Network Graphs"]
 
@@ -91,7 +91,7 @@ flowchart TB
 
 |  Level | Maturity             | Core Focus             | Key Capabilities                          |
 | :----: | :------------------- | :--------------------- | :---------------------------------------- |
-| **01** | 🗺️ **Descriptive**  | Spatial Representation | GIS, OSM, network graphs                  |
+| **01** | 🗺️ **Descriptive**   | Spatial Representation | GIS, OSM, network graphs                  |
 | **02** | 📡 **Informative**   | Real-Time Awareness    | GTFS-RT, sensors, live dashboards         |
 | **03** | 🔮 **Predictive**    | Forecasting & ML       | ETA, demand, congestion prediction        |
 | **04** | 🧪 **Comprehensive** | Simulation             | SUMO, scenarios, disruption analysis      |
