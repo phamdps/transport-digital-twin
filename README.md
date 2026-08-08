@@ -396,6 +396,10 @@ transport-digital-twin/
 # 🔗 Core Data & Intelligence Pipeline
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 flowchart TB
 
     DATA["📦 DATA SOURCES<br/><br/>OpenStreetMap<br/>GTFS / GTFS-RT<br/>Traffic Sensors<br/>IoT • Events"]
