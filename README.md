@@ -410,21 +410,21 @@ config:
 ---
 flowchart TB
 
-    DATA["📦 DATA SOURCES<br/><br/>OpenStreetMap<br/>GTFS / GTFS-RT<br/>Traffic Sensors<br/>IoT • Events"]
+    DATA["📦 DATA SOURCES <br/><br/>Open Street Map<br/>GTFS / GTFS-RT <br/> Traffic Sensors <br/> IoT • Events"]
 
-    INGEST["📥 DATA INGESTION<br/><br/>ETL • APIs<br/>Streaming • Validation"]
+    INGEST["📥 DATA INGESTION <br/><br/> ETL • APIs <br/> Streaming • Validation"]
 
-    TWIN["🗺️ DIGITAL TWIN<br/><br/>Spatial Model<br/>Network Graph<br/>Infrastructure"]
+    TWIN["🗺️ DIGITAL TWIN <br/><br/> Spatial Model <br/> Network Graph <br/> Infrastructure"]
 
-    STATE["📡 REAL-TIME STATE<br/><br/>Vehicles<br/>Delays • Incidents<br/>Network Conditions"]
+    STATE["📡 REAL-TIME STATE <br/><br/> Vehicles <br/> Delays • Incidents <br/> Network Conditions"]
 
-    ML["🔮 PREDICTIVE AI<br/><br/>ETA<br/>Demand<br/>Congestion"]
+    ML["🔮 PREDICTIVE AI <br/><br/> ETA <br/> Demand <br/> Congestion"]
 
-    SIM["🧪 SIMULATION<br/><br/>SUMO<br/>What-If Scenarios<br/>Disruption Models"]
+    SIM["🧪 SIMULATION <br/><br/> SUMO<br/> What-If Scenarios <br/> Disruption Models"]
 
-    OPT["🎯 OPTIMIZATION<br/><br/>AI Agents<br/>Control<br/>Routing"]
+    OPT["🎯 OPTIMIZATION <br/><br/> AI Agents <br/> Control <br/> Routing"]
 
-    ACTION["⚡ ACTION<br/><br/>Signals<br/>Routes<br/>Operations"]
+    ACTION["⚡ ACTION <br/><br/> Signals <br/> Routes <br/> Operations"]
 
     DATA --> INGEST
     INGEST --> TWIN
