@@ -241,6 +241,10 @@ Level 5 transforms the digital twin from an analytical platform into an adaptive
 The final architecture connects the digital twin back to the physical transportation network.
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 flowchart LR
 
     WORLD["🏙️ REAL WORLD<br/>Roads • Transit • Vehicles"]
@@ -330,6 +334,10 @@ The project includes visual snapshots demonstrating the evolution of the digital
 The dashboards progressively evolve with the maturity of the digital twin.
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 flowchart LR
 
     L1["🗺️ LEVEL 1<br/><br/><b>SEE THE CITY</b><br/><br/>Network topology<br/>Infrastructure<br/>Assets"]
@@ -451,6 +459,10 @@ flowchart TB
 The ultimate objective is to create a transportation digital twin capable of continuously answering six increasingly sophisticated questions:
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 flowchart LR
     Q1["🗺️ WHAT IS<br/>HAPPENING?"]
     Q2["📡 WHAT IS HAPPENING<br/>RIGHT NOW?"]
