@@ -42,6 +42,7 @@ venv/
 
 # Caches & Logs
 .cache/
+cache/
 *.log
 logs/
 
