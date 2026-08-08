@@ -116,7 +116,7 @@ multimodal-traffic-mllm/
 
 ```bash
 # Clone the repository
-git clone [https://github.com/your-org/multimodal-traffic-mllm.git](https://github.com/your-org/multimodal-traffic-mllm.git)
+git clone [https://github.com/phamdps/multimodal-traffic-mllm.git](https://github.com/phamdps/multimodal-traffic-mllm.git)
 cd multimodal-traffic-mllm
 
 # Create conda environment
