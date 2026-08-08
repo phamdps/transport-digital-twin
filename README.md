@@ -340,15 +340,15 @@ config:
 ---
 flowchart LR
 
-    L1["🗺️ LEVEL 1 <br/><br/><b> SEE THE CITY </b><br/><br/> Network topology <br/> Infrastructure<br/>Assets"]
+    L1["🗺️ LEVEL 1 <br/><br/><b> SEE THE CITY </b><br/><br/> Network Topology <br/> Infrastructure <br/> Assets"]
 
-    L2["📡 LEVEL 2 <br/><br/><b> SEE WHAT IS HAPPENING </b><br/><br/> Live fleet <br/>Operations<br/> Network status"]
+    L2["📡 LEVEL 2 <br/><br/><b> SEE WHAT IS HAPPENING </b><br/><br/> Live Fleet <br/> Operations <br/> Network Status"]
 
     L3["🔮 LEVEL 3 <br/><br/><b> UNDERSTAND WHAT HAPPENS NEXT </b><br/><br/> Prediction <br/> Forecasting <br/> Routing"]
 
     L4["🧪 LEVEL 4 <br/><br/><b> TEST WHAT COULD HAPPEN</b><br/><br/> Simulation <br/> Scenarios <br/> Interventions"]
 
-    L5["🤖 LEVEL 5 <br/><br/><b> DECIDE & ACT </b><br/><br/> Optimization <br/> Control <br/> Autonomous actions"]
+    L5["🤖 LEVEL 5 <br/><br/><b> DECIDE & ACT </b><br/><br/> Optimization <br/> Control <br/> Autonomous Actions"]
 
     L1 --> L2 --> L3 --> L4 --> L5
 
