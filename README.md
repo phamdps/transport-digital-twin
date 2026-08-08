@@ -452,29 +452,28 @@ The ultimate objective is to create a transportation digital twin capable of con
 
 ```mermaid
 flowchart LR
-
-    Q1["🗺️ What is happening?"]
-    Q2["📡 What is happening<br/>right now?"]
-    Q3["🔮 What will happen<br/>next?"]
-    Q4["🧪 What could happen<br/>if we intervene?"]
-    Q5["🎯 What should<br/>we do?"]
-    Q6["🤖 Can the system<br/>act automatically?"]
+    Q1["🗺️ WHAT IS<br/>HAPPENING?"]
+    Q2["📡 WHAT IS HAPPENING<br/>RIGHT NOW?"]
+    Q3["🔮 WHAT WILL HAPPEN<br/>NEXT?"]
+    Q4["🧪 WHAT COULD HAPPEN<br/>IF WE INTERVENE?"]
+    Q5["🎯 WHAT SHOULD<br/>WE DO?"]
+    Q6["🤖 CAN THE SYSTEM<br/>ACT AUTOMATICALLY?"]
 
     Q1 --> Q2 --> Q3 --> Q4 --> Q5 --> Q6
 
-    classDef q1 fill:#ede9fe,stroke:#7c3aed,stroke-width:2px;
-    classDef q2 fill:#e0f2fe,stroke:#0284c7,stroke-width:2px;
-    classDef q3 fill:#fef3c7,stroke:#d97706,stroke-width:2px;
-    classDef q4 fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
-    classDef q5 fill:#fce7f3,stroke:#db2777,stroke-width:2px;
-    classDef q6 fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px;
+    classDef q1 fill:#ede9fe,stroke:#7c3aed,stroke-width:2px
+    classDef q2 fill:#e0f2fe,stroke:#0284c7,stroke-width:2px
+    classDef q3 fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    classDef q4 fill:#dcfce7,stroke:#16a34a,stroke-width:2px
+    classDef q5 fill:#fce7f3,stroke:#db2777,stroke-width:2px
+    classDef q6 fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px
 
-    class Q1 q1;
-    class Q2 q2;
-    class Q3 q3;
-    class Q4 q4;
-    class Q5 q5;
-    class Q6 q6;
+    class Q1 q1
+    class Q2 q2
+    class Q3 q3
+    class Q4 q4
+    class Q5 q5
+    class Q6 q6
 ```
 
 This progression transforms raw transportation data into:
