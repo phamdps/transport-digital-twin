@@ -1,129 +1,66 @@
-# ==============================================================================
-# Byte-compiled / optimized / DLL files
-# ==============================================================================
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-
-# ==============================================================================
-# Cextensions
-# ==============================================================================
-*.so
-
-# ==============================================================================
-# Distribution / packaging
-# ==============================================================================
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# ==============================================================================
-# Virtual Environments
-# ==============================================================================
-venv/
-env/
-ENV/
-env.bak/
-venv.bak/
 .venv/
-conda/
+env/
+venv/
 
-# ==============================================================================
-# Unit test / coverage reports
-# ==============================================================================
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py.cover
-.hypothesis/
-.pytest_cache/
-cover/
+# Jupyter Notebooks
+.ipynb_checkpoints
 
-# ==============================================================================
-# Environments, Secrets & Configs
-# ==============================================================================
-.env
-.env.local
-.env.*.local
-*.env
-*.pem
-*.key
-*.cert
-secrets.yaml
-config.local.yaml
+# Caches & Logs
+.cache/
+*.log
+logs/
 
-# ==============================================================================
-# Model Checkpoints & Large Data Files (GNNs / Datasets / GIS)
-# ==============================================================================
-# Model weights & checkpoints
-*.pth
+# IDEs & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large Data & Model Weights (Keep structure via .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+*.h5
+*.pkl
 *.pt
 *.onnx
-*.bin
-*.h5
-*.ckpt
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
 
-# Large dataset files (GIS / Telemetry)
-*.geojson
-*.shp
-*.dbf
-*.prj
-*.shx
-*.gpkg
-*.parquet
-*.feather
-*.csv
-*.pcap
-
-# ==============================================================================
-# Jupyter Notebooks & Output Logs
-# ==============================================================================
+# Jupyter Notebooks
 .ipynb_checkpoints
-*-checkpoint.ipynb
+
+# Caches & Logs
+.cache/
 *.log
+logs/
 
-# ==============================================================================
-# IDEs & Code Editors
-# ==============================================================================
-# VS Code
+# IDEs & OS
 .vscode/
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-
-# PyCharm / JetBrains
 .idea/
-
-# Mac OS metadata
 .DS_Store
-
-# Windows metadata
 Thumbs.db
-Desktop.ini
 
-# Extra
-xrefs/
+# Large Data & Model Weights (Keep structure via .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+*.h5
+*.pkl
+*.pt
+*.onnx
+GITIGNORE
+
+# Extra files
+docs/*
