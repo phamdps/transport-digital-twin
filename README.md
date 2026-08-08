@@ -464,12 +464,12 @@ config:
   htmlLabels: false
 ---
 flowchart LR
-    Q1["🗺️ WHAT IS<br/>HAPPENING?"]
-    Q2["📡 WHAT IS HAPPENING<br/>RIGHT NOW?"]
-    Q3["🔮 WHAT WILL HAPPEN<br/>NEXT?"]
-    Q4["🧪 WHAT COULD HAPPEN<br/>IF WE INTERVENE?"]
-    Q5["🎯 WHAT SHOULD<br/>WE DO?"]
-    Q6["🤖 CAN THE SYSTEM<br/>ACT AUTOMATICALLY?"]
+    Q1["🗺️ WHAT IS <br/> HAPPENING?"]
+    Q2["📡 WHAT IS HAPPENING <br/> RIGHT NOW?"]
+    Q3["🔮 WHAT WILL HAPPEN <br/> NEXT?"]
+    Q4["🧪 WHAT COULD HAPPEN <br/> IF WE INTERVENE?"]
+    Q5["🎯 WHAT SHOULD <br/> WE DO?"]
+    Q6["🤖 CAN THE SYSTEM <br/> ACT AUTOMATICALLY?"]
 
     Q1 --> Q2 --> Q3 --> Q4 --> Q5 --> Q6
 
