@@ -44,21 +44,37 @@ The ultimate goal is a closed-loop system capable of **observing the physical ci
 The project progresses through five distinct digital twin maturity levels, moving from spatial representation toward autonomous transportation control.
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 flowchart TB
 
-    CITY["🏙️ PHYSICAL URBAN NETWORK<br/><br/>Roads • Transit • Vehicles • Sensors"]
+    CITY["🏙️ PHYSICAL URBAN NETWORK
+Roads • Transit • Vehicles • Sensors"]
 
-    L1["🗺️ LEVEL 1 · DESCRIPTIVE<br/><br/>Spatial Mapping & Representation<br/><br/>GIS • OSM • Infrastructure • Network Graphs"]
+    L1["🗺️ LEVEL 1 · DESCRIPTIVE
+Spatial Mapping & Representation
+GIS • OSM • Infrastructure • Network Graphs"]
 
-    L2["📡 LEVEL 2 · INFORMATIVE<br/><br/>Real-Time Operational Awareness<br/><br/>GTFS-RT • Sensors • Streaming • Live Status"]
+    L2["📡 LEVEL 2 · INFORMATIVE
+Real-Time Operational Awareness
+GTFS-RT • Sensors • Streaming • Live Status"]
 
-    L3["🔮 LEVEL 3 · PREDICTIVE<br/><br/>Forecasting & Machine Learning<br/><br/>ETA • Demand • Congestion • Anomaly Prediction"]
+    L3["🔮 LEVEL 3 · PREDICTIVE
+Forecasting & Machine Learning
+ETA • Demand • Congestion • Anomaly Prediction"]
 
-    L4["🧪 LEVEL 4 · COMPREHENSIVE<br/><br/>Simulation & What-If Analysis<br/><br/>SUMO • Scenarios • Disruptions • Interventions"]
+    L4["🧪 LEVEL 4 · COMPREHENSIVE
+Simulation & What-If Analysis
+SUMO • Scenarios • Disruptions • Interventions"]
 
-    L5["🤖 LEVEL 5 · AUTONOMOUS<br/><br/>Adaptive Decision & Control<br/><br/>AI Agents • Optimization • Feedback"]
+    L5["🤖 LEVEL 5 · AUTONOMOUS
+Adaptive Decision & Control
+AI Agents • Optimization • Feedback"]
 
-    LOOP["🔄 CLOSED-LOOP INTELLIGENCE<br/><br/>Observe → Predict → Simulate → Optimize → Act"]
+    LOOP["🔄 CLOSED-LOOP INTELLIGENCE
+Observe → Predict → Simulate → Optimize → Act"]
 
     CITY --> L1
     L1 --> L2
@@ -84,6 +100,7 @@ flowchart TB
     class L5 level5;
     class LOOP loop;
 ```
+
 
 ---
 
