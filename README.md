@@ -363,7 +363,81 @@ flowchart LR
     class L3 l3;
     class L4 l4;
     class L5 l5;
+
+
+
 ```
+
+The multimodal ecosystem has expanded significantly, marked by the maturation of native cross-modal architectures, massive context extensions (reaching up to 10 million tokens in open-weight models like **Llama 4 Scout**), and deeply integrated agentic reasoning.
+
+The updated state of frontier Multimodal Large Language Models (MLLMs) covers major tech entities and labs:
+
+---
+
+# 🌐 Frontier MLLM Ecosystem & Latest Capabilities
+
+* **OpenAI (GPT-5 / GPT-5.5 / o-Series Reasoning)**
+* *Current Landscape:* Driven by **GPT-5.5** and advanced reasoning models (o3/o4).
+* *Multimodal Focus:* Deeply integrated agentic workflows, advanced visual synthesis, complex tool-use execution, and high-precision multi-step data interpretation.
+
+
+* **Google DeepMind (Gemini 3 / 3.5 Flash & Pro Era)**
+* *Current Landscape:* Spearheaded by **Gemini 3.5 Flash** and Gemini 3 Pro series.
+* *Multimodal Focus:* The industry benchmark for native, low-latency omni-processing across simultaneous text, image, long-form audio, and high-definition video streams with expansive context windows.
+
+
+* **Anthropic (Claude 4 / 4.5 / Opus 4.7 & 4.8 Series)**
+* *Current Landscape:* Anchored by the **Claude 4** family and iterative updates like **Opus 4.7/4.8** and **Sonnet 4.6**.
+* *Multimodal Focus:* Unmatched code reasoning, exact technical diagram parsing, multi-file software analysis, and rigorous document compliance checks.
+
+
+* **Meta (Llama 4 Scout & Maverick / SAM 3 Vision)**
+* *Current Landscape:* Revolutionized open-weights infrastructure via the **Llama 4** generation (featuring extreme long-context variants like *Llama 4 Scout* with up to 10M token context) alongside specialized zero-shot segmentation vision tools like **SAM 3**.
+* *Multimodal Focus:* Democratizing private, local enterprise deployment with data privacy compliance and cross-modal native scaling.
+
+
+* **Alibaba Cloud (Qwen3-VL / Qwen3-Coder)**
+* *Current Landscape:* The latest **Qwen3-VL** iterations.
+* *Multimodal Focus:* Exceptional spatial-temporal grounding, multilingual optical character recognition (OCR), layout-aware document ingestion, and advanced agentic GUI navigation.
+
+
+* **DeepSeek (DeepSeek-V4 Flash / Pro & OCR-2)**
+* *Current Landscape:* Powered by highly efficient Mixture-of-Experts (MoE) architectures like **DeepSeek V4 Flash** alongside specialized visual layout parsers like **DeepSeek-OCR 2**.
+* *Multimodal Focus:* Drastically slashing inference costs (up to orders of magnitude cheaper than premium tiers) while retaining top-tier coding, logic, and structured document extraction capabilities.
+
+
+* **xAI (Grok 4 / 4.3 Series)**
+* *Current Landscape:* Scaled through **Grok 4.3** and fast variants.
+* *Multimodal Focus:* Real-time integration with live global data streams, configurable reasoning depth per request, and low-latency operational monitoring.
+
+
+* **Mistral AI (Mistral Large 3 & Medium 3.5)**
+* *Current Landscape:* Led by **Mistral Large 3** (frequently under Apache 2.0 or open-weights friendly licenses).
+* *Multimodal Focus:* Providing European enterprises with natively multimodal, data-residency-compliant, high-performance self-hosted models.
+
+
+* **Baidu (ERNIE 4.5 / Native Multimodal Ecosystem)**
+* *Current Landscape:* Ongoing upgrades to the ERNIE line.
+* *Multimodal Focus:* Robust domestic Chinese language-vision parsing, cross-modal retrieval, and large-scale industrial enterprise deployment.
+
+
+* **Microsoft (Phi-4 Multimodal & Florence Series)**
+* *Current Landscape:* **Phi-4 Multimodal**.
+* *Multimodal Focus:* Edge-optimized intelligence designed for low-latency processing on local hardware, smart devices, and resource-constrained environments.
+
+---
+
+<div align="center">
+
+## 🧠 State-of-the-Art Frontier MLLM Ecosystem
+
+<img src="results/mllms.png" alt="Timeline and Overview of Major MLLMs from Tech Giants" width="900">
+
+**Global MLLM Landscape & Timeline**
+
+*Mapping foundational multi-modal evolution—covering OpenAI, Google, Anthropic, Meta, Alibaba, DeepSeek, xAI, Mistral, Baidu, and Microsoft—as the core intelligence drivers for predictive and autonomous transportation digital twins.*
+
+</div>
 
 ---
 
