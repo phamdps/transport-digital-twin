@@ -285,7 +285,7 @@ flowchart LR
 
 # 📸 Digital Twin Command Center
 
-The project includes visual snapshots demonstrating the evolution of the digital twin across its first three maturity levels.
+The project includes visual snapshots demonstrating the evolution of the digital twin across its five maturity levels.
 
 <div align="center">
 
@@ -324,6 +324,34 @@ The project includes visual snapshots demonstrating the evolution of the digital
 **Predictive Digital Twin**
 
 *Predictive routing, congestion forecasting, and disruption scenario analysis.*
+
+</div>
+
+---
+
+<div align="center">
+
+## Level 4 — Comprehensive Simulation & Disruption Analysis
+
+<img src="results/Level_4.png" alt="Level 4 Digital Twin Dashboard" width="900">
+
+**Comprehensive Digital Twin**
+
+*Microscopic traffic simulation, SUMO scenarios, and disruption impact evaluation.*
+
+</div>
+
+---
+
+<div align="center">
+
+## Level 5 — Autonomous Decision & Closed-Loop Control
+
+<img src="results/Level_5.png" alt="Level 5 Digital Twin Dashboard" width="900">
+
+**Autonomous Digital Twin**
+
+*Agentic AI, dynamic traffic signal optimization, and automated network-wide rerouting.*
 
 </div>
 
