@@ -6,7 +6,10 @@ import sqlite3
 import datetime
 from pathlib import Path
 
-# Setup paths
+# ==========================================
+# 1. PATH CONFIGURATION & SETUP
+# ==========================================
+# Resolve base directory and ensure real-time data storage folder exists
 BASE_DIR = Path(__file__).resolve().parent.parent
 REALTIME_DIR = BASE_DIR / "data" / "realtime"
 REALTIME_DIR.mkdir(parents=True, exist_ok=True)
@@ -15,8 +18,11 @@ JSON_PATH = REALTIME_DIR / "latest_vehicles.json"
 DB_PATH = REALTIME_DIR / "telemetry_history.db"
 CONTROL_PATH = REALTIME_DIR / "control_signals.json"
 
-# Initialize SQLite Telemetry Database
+# ==========================================
+# 2. SQLITE TELEMETRY DATABASE INITIALIZATION
+# ==========================================
 def init_db():
+    """Initializes the rolling historical SQLite database for vehicle telemetry."""
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute("""
@@ -34,14 +40,16 @@ def init_db():
 
 init_db()
 
-# Initialize simulated vehicle fleet around San Francisco coordinates
+# ==========================================
+# 3. INITIALIZE SIMULATED FLEET (SAN FRANCISCO)
+# ==========================================
 vehicles = []
 zones_list = ["Market Street Corridor", "Embarcadero South", "Financial District", "Mission District"]
 
+# Generate 40 simulated vehicles scattered around San Francisco coordinates
 for i in range(1, 41):
     vehicles.append({
         "vehicle_id": f"SF_FLEET_{i:03d}",
-        # Centered around San Francisco downtown/Financial District
         "latitude": 37.7749 + random.uniform(-0.015, 0.015),
         "longitude": -122.4194 + random.uniform(-0.015, 0.015),
         "speed_kmh": random.uniform(12.0, 45.0),
@@ -51,6 +59,9 @@ for i in range(1, 41):
 print(f"🚀 Starting SF Transport Telemetry Simulation with {len(vehicles)} active units...")
 print(f"📡 Streaming updates to: {JSON_PATH}")
 
+# ==========================================
+# 4. REAL-TIME SIMULATION LOOP
+# ==========================================
 while True:
     current_time = time.time()
     
@@ -71,17 +82,16 @@ while True:
 
     updated_vehicles = []
     for v in vehicles:
-        # Simulate movement
+        # Simulate continuous movement across spatial coordinates
         v["latitude"] += random.uniform(-0.0004, 0.0004)
         v["longitude"] += random.uniform(-0.0004, 0.0004)
         
         base_speed = random.uniform(10.0, 45.0)
         
-        # Apply closed-loop control speed cap if vehicle is in a restricted zone
+        # Apply Level 5 closed-loop control speed cap if vehicle is in a restricted zone
         if v["zone"] in active_caps:
             speed_cap = active_caps[v["zone"]]
             v["speed_kmh"] = min(base_speed, speed_cap)
-            print(f"⚠️ [CLOSED-LOOP ENFORCED] {v['vehicle_id']} in {v['zone']} capped at {v['speed_kmh']:.1f} km/h")
         else:
             v["speed_kmh"] = base_speed
 
@@ -95,7 +105,7 @@ while True:
         }
         updated_vehicles.append(v_record)
 
-        # Log into SQLite history database
+        # Log telemetry record into SQLite history database
         cursor.execute("""
             INSERT INTO vehicle_telemetry (vehicle_id, timestamp, latitude, longitude, speed_kmh, zone)
             VALUES (?, ?, ?, ?, ?, ?)
@@ -108,4 +118,5 @@ while True:
     with open(JSON_PATH, "w") as f:
         json.dump(updated_vehicles, f, indent=4)
 
+    # Simulation tick interval (3 seconds)
     time.sleep(3)
