@@ -608,3 +608,22 @@ This progression transforms raw transportation data into:
 
 </div>
 
+## 📚 References & Reading List
+
+* **Qwen2-VL & Qwen2.5-VL (Open Multimodal LLM):** Bai et al. (2024 / 2025), *[Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923)* — Upgrades the vision-language series with native dynamic resolution processing, absolute time encoding for long-video event localization, and agentic computer/phone use.
+* **TrafficGPT (Agentic Traffic Control):** Zhang et al. (2024), *[TrafficGPT: Viewing, Capturing, and Responding to Traffic Chaos with LLM](https://arxiv.org/abs/2309.06719)* — Demonstrates how LLM agents interface with traffic simulators to manage complex urban intersections.
+* **Ollama & Local Execution Engines:** *[Ollama: Get up and running with Llama 3, Qwen 2, and other large language models locally](https://github.com/ollama/ollama)* — Framework enabling localized, privacy-compliant inference for edge-deployed digital twins.
+* **LLMs in Transportation Management:** Zhao et al. (2026), *[Large Language Models in Transportation Systems Management and Operations: From Text Reasoning to Multi-modal Decision Support](https://arxiv.org/abs/2606.00991)* — Comprehensive survey evaluating how MM-LLMs integrate heterogeneous text, visual, and sensor inputs for operator-facing decision support.
+* **Multimodal LLM for ITS:** Al-Tameemi et al. (2024), *[Multimodal LLM for Intelligent Transportation Systems](https://arxiv.org/abs/2412.11683)* — Proposes a unified 3D MLLM framework evaluating sequential, audio, and visual sensor telemetry for intelligent transportation.
+* **Aurora (Multimodal TSFM):** Wu et al. (2025/2026), *[Aurora: Towards Universal Generative Multimodal Time Series Forecasting](https://arxiv.org/abs/2509.22295)* — Introduces modality-guided multi-head attention and prototype-guided flow matching for zero-shot time series synthesis.
+* **HORAI (Frequency-Enhanced MFM):** Chen et al. (2026), *[Empowering Time Series Analysis with Large-Scale Multimodal Pretraining](https://arxiv.org/abs/2602.05646)* — Proposes a billion-scale multimodal time series corpus (MM-TS) leveraging endogenous images/text and exogenous news.
+* **Earth Science Survey:** Zhao et al. (2026), *[Earth Science Foundation Models: From Perception to Reasoning and Discovery](https://arxiv.org/html/2605.12542v1)* — Comprehensive survey evaluating geospatial foundation models spanning perception, text reasoning, and agentic workflows.
+* **GeoXplain Toolkit:** Koprolin et al. (2026), *[GeoXplain: On-the-Fly Visual Explanations for Weather Foundation Models](https://arxiv.org/abs/2607.05655)* — Interactive visual interpretation tool tailored for weather and climate foundation architectures like Microsoft Aurora.
+* **Amazon Chronos:** Ansari et al. (2024), *[Chronos: Learning the Language of Time Series](https://arxiv.org/abs/2403.07815)* — Scaling tokenized scalar values into fixed vocabularies using language model architectures via cross-entropy loss.
+* **ClimaX:** Nguyen et al. (2023), *[ClimaX: A foundation model for weather and climate](https://arxiv.org/abs/2301.10343)* — Flexible deep learning frameworks using custom tokenizers for geospatial grids.
+
+---
+
+## 🛡 License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
