@@ -615,6 +615,7 @@ This progression transforms raw transportation data into:
 
 #### 🌐 Open & Frontier Multimodal Foundation Models (Latest Flagship Releases)
 
+* **Gemini 3.6 Flash & Gemini Omni (Google):** Google (2026), *[Introducing Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/)* — Google's latest multimodal ecosystem featuring **Gemini Omni** (built for cross-modal video generation and conversational video editing) and **Gemini 3.6 Flash** (the flagship workhorse optimizing high-speed agentic execution, token efficiency, and advanced code reasoning).
 * **Qwen2.5-VL (Alibaba):** Bai et al. (2025), *[Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923)* — Features native dynamic resolution processing, absolute time encoding for long-video localization up to hours, and advanced agentic computer/phone tool execution.
 * **Llama 3.2 Vision (Meta):** Meta (2024), *[Llama 3.2: Instruct and Vision Models of 11B and 90B](https://docs.api.nvidia.com/nim/reference/meta-llama-3_2-11b-vision-instruct)* — Open-weights image-reasoning models utilizing dedicated cross-attention vision adapters built atop the Llama 3.1 architecture.
 * **Phi-4-Multimodal (Microsoft):** Abdin et al. (2025), *[Phi-4-multimodal-instruct](https://huggingface.co/microsoft/Phi-4-multimodal-instruct)* — Lightweight native open multimodal architecture processing text, images, and speech input concurrently on a unified representation space.
