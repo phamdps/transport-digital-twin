@@ -608,13 +608,35 @@ This progression transforms raw transportation data into:
 
 </div>
 
-## 📚 References & Reading List
 
-* **Qwen2-VL & Qwen2.5-VL (Open Multimodal LLM):** Bai et al. (2024 / 2025), *[Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923)* — Upgrades the vision-language series with native dynamic resolution processing, absolute time encoding for long-video event localization, and agentic computer/phone use.
-* **TrafficGPT (Agentic Traffic Control):** Zhang et al. (2024), *[TrafficGPT: Viewing, Capturing, and Responding to Traffic Chaos with LLM](https://arxiv.org/abs/2309.06719)* — Demonstrates how LLM agents interface with traffic simulators to manage complex urban intersections.
+# 📚 Reference & Reading List
+
+---
+
+#### 🌐 Open & Frontier Multimodal Foundation Models (Latest Flagship Releases)
+
+* **Qwen2.5-VL (Alibaba):** Bai et al. (2025), *[Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923)* — Features native dynamic resolution processing, absolute time encoding for long-video localization up to hours, and advanced agentic computer/phone tool execution.
+* **Llama 3.2 Vision (Meta):** Meta (2024), *[Llama 3.2: Instruct and Vision Models of 11B and 90B](https://docs.api.nvidia.com/nim/reference/meta-llama-3_2-11b-vision-instruct)* — Open-weights image-reasoning models utilizing dedicated cross-attention vision adapters built atop the Llama 3.1 architecture.
+* **Phi-4-Multimodal (Microsoft):** Abdin et al. (2025), *[Phi-4-multimodal-instruct](https://huggingface.co/microsoft/Phi-4-multimodal-instruct)* — Lightweight native open multimodal architecture processing text, images, and speech input concurrently on a unified representation space.
+* **Pixtral 12B (Mistral AI):** Mistral AI (2024), *[Pixtral 12B Technical Summary](https://arxiv.org/html/2410.07073v2)* — Open-weights model equipped with a custom-built vision encoder capable of ingesting arbitrary image resolutions and native aspect ratios within a 128K context window.
+* **DeepSeek-VL2 (DeepSeek):** Wu et al. (2024), *[DeepSeek-VL2: Mixture-of-Experts Vision-Language Models for Advanced Multimodal Understanding](https://arxiv.org/abs/2412.10302)* — Advanced MoE vision-language architecture utilizing dynamic tiling for high-resolution document and image comprehension.
+* **Grok-3 & Grok-4 Vision (xAI):** xAI (2025/2026), *[Grok-4 Technical Overview & RealWorldQA](https://x.ai/news)* — Frontier multimodal systems tightly integrated with real-time X data streams and advanced multi-step reasoning modes.
+* **GPT-4o (OpenAI):** OpenAI (2024), *[Hello GPT-4o](https://openai.com/index/hello-gpt-4o/)* — Native omni-architecture trained across text, audio, and vision synchronously for real-time low-latency interaction.
+* **Claude 3.5 Sonnet (Anthropic):** Anthropic (2024), *[Claude 3.5 Sonnet Release](https://www.anthropic.com/news/claude-3-5-sonnet)* — State-of-the-art vision-language model excelling in complex visual software engineering, dense chart analysis, and spatial reasoning.
+* **ERNIE 5.0 / ERNIE-ViL (Baidu):** Baidu (2025/2026), *[ERNIE 5.0: Large-Scale Mixture-of-Experts Foundation Model](https://arxiv.org/abs/2602.04705)* — Billion-scale MoE architecture driving Baidu's multi-modal cross-domain text, visual, and autonomous driving intelligence.
 * **Ollama & Local Execution Engines:** *[Ollama: Get up and running with Llama 3, Qwen 2, and other large language models locally](https://github.com/ollama/ollama)* — Framework enabling localized, privacy-compliant inference for edge-deployed digital twins.
-* **LLMs in Transportation Management:** Zhao et al. (2026), *[Large Language Models in Transportation Systems Management and Operations: From Text Reasoning to Multi-modal Decision Support](https://arxiv.org/abs/2606.00991)* — Comprehensive survey evaluating how MM-LLMs integrate heterogeneous text, visual, and sensor inputs for operator-facing decision support.
+
+#### 🚦 Intelligent Transportation Systems & LLM Operations (TSMO)
+
+* **LLMs in Transportation Management:** Li et al. (2026), *[Large Language Models in Transportation Systems Management and Operations: From Text Reasoning to Multi-modal Decision Support](https://arxiv.org/abs/2606.00991)* — Comprehensive survey evaluating how Multi-modal Large Language Models (MM-LLMs) integrate heterogeneous text, sensor telemetry, incident reports, and visual observations into operator-facing decision support.
+* **TrafficGPT (Agentic Traffic Control):** Zhang et al. (2024), *[TrafficGPT: Viewing, Capturing, and Responding to Traffic Chaos with LLM](https://arxiv.org/abs/2309.06719)* — Demonstrates how LLM agents interface with traffic simulators to manage complex urban intersections.
 * **Multimodal LLM for ITS:** Al-Tameemi et al. (2024), *[Multimodal LLM for Intelligent Transportation Systems](https://arxiv.org/abs/2412.11683)* — Proposes a unified 3D MLLM framework evaluating sequential, audio, and visual sensor telemetry for intelligent transportation.
+* **xTP-LLM (Explainable Traffic Forecasting):** Communications in Transportation Research (2024), *[Towards Explainable Traffic Flow Prediction with Large Language Models](https://arxiv.org/abs/2404.02937)* — Integrates multi-modal spatial-temporal data (Points of Interest, weather, historical logs) with Chain-of-Thought reasoning to generate accurate, interpretable traffic volume forecasts.
+* **TraveLLM (Disruption-Aware Transit Routing):** Fang et al. (2024/2025), *[TraveLLM: Could You Plan My Public Transit Alternatives in Face of a Network Disruption?](https://arxiv.org/abs/2407.14926)* — Employs a two-stage LLM planner architecture to process natural language user constraints, live map data, and network disruption alerts for personalized alternative routing.
+* **LC-LLM (Explainable Driving Behavior):** Peng et al. (2024/2025), *[LC-LLM: Explainable Lane-Change Intention and Trajectory Predictions with Large Language Models](https://arxiv.org/abs/2403.18344)* — Reformulates vehicle trajectory and lane-change intent forecasting as a language modeling problem, applying supervised fine-tuning and transparent step-by-step reasoning.
+
+#### 📈 Time-Series, Geospatial, & Weather Foundation Models
+
 * **Aurora (Multimodal TSFM):** Wu et al. (2025/2026), *[Aurora: Towards Universal Generative Multimodal Time Series Forecasting](https://arxiv.org/abs/2509.22295)* — Introduces modality-guided multi-head attention and prototype-guided flow matching for zero-shot time series synthesis.
 * **HORAI (Frequency-Enhanced MFM):** Chen et al. (2026), *[Empowering Time Series Analysis with Large-Scale Multimodal Pretraining](https://arxiv.org/abs/2602.05646)* — Proposes a billion-scale multimodal time series corpus (MM-TS) leveraging endogenous images/text and exogenous news.
 * **Earth Science Survey:** Zhao et al. (2026), *[Earth Science Foundation Models: From Perception to Reasoning and Discovery](https://arxiv.org/html/2605.12542v1)* — Comprehensive survey evaluating geospatial foundation models spanning perception, text reasoning, and agentic workflows.
