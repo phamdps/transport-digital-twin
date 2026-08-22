@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1150" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Arrow Marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8" />
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="900" height="1150" fill="url(#bgGrad)" />
+
+  <!-- Title Banner -->
+  <text x="450" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc" text-anchor="middle">TRANSPORTATION DIGITAL TWIN</text>
+  <text x="450" y="75" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">End-to-End System Architecture &amp; Layered Execution Pipeline</text>
+
+  <!-- ==================== LAYER 1 ==================== -->
+  <g transform="translate(50, 110)">
+    <rect width="800" height="150" rx="12" fill="url(#cardGrad)" stroke="#3b82f6" stroke-width="2" filter="url(#glow)" />
+    <text x="25" y="30" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#60a5fa">LAYER 1: DATA &amp; PERSISTENCE</text>
+    
+    <!-- Sub-boxes -->
+    <rect x="30" y="50" width="350" height="75" rx="8" fill="#1e293b" stroke="#475569" />
+    <text x="50" y="80" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">CCTV Frames &amp; Ground Truth</text>
+    <text x="50" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">datasets/real_frames/ &amp; real_ground_truth.json</text>
+
+    <rect x="420" y="50" width="350" height="75" rx="8" fill="#1e293b" stroke="#475569" />
+    <text x="440" y="80" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">SurrealDB Multi-Model Store</text>
+    <text x="440" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Spatial Points, Vector Embeddings &amp; Time-Series</text>
+  </g>
+
+  <!-- Connector 1->2 -->
+  <path d="M 450 260 L 450 295" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)" />
+
+  <!-- ==================== LAYER 2 ==================== -->
+  <g transform="translate(50, 305)">
+    <rect width="800" height="175" rx="12" fill="url(#cardGrad)" stroke="#10b981" stroke-width="2" filter="url(#glow)" />
+    <text x="25" y="30" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#34d399">LAYER 2: MULTIMODAL PERCEPTION &amp; MLLM</text>
+
+    <rect x="30" y="50" width="350" height="100" rx="8" fill="#1e293b" stroke="#475569" />
+    <text x="50" y="80" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">TrafficVisionPerceiver</text>
+    <text x="50" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">twin/perception.py + Weather API</text>
+    <text x="50" y="124" font-family="system-ui, sans-serif" font-size="12" fill="#38bdf8">Outputs structured JSON telemetry</text>
+
+    <rect x="420" y="50" width="350" height="100" rx="8" fill="#1e293b" stroke="#475569" />
+    <text x="440" y="80" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">Qwen2.5-VL-7B-Instruct</text>
+    <text x="440" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">QLoRA 4-bit NF4 Quantization</text>
+    <text x="440" y="124" font-family="system-ui, sans-serif" font-size="12" fill="#34d399">Custom LoRA Adapters (twin/fine_tune_qwen.py)</text>
+  </g>
+
+  <!-- Connector 2->3 -->
+  <path d="M 450 480 L 450 515" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)" />
+
+  <!-- ==================== LAYER 3 ==================== -->
+  <g transform="translate(50, 525)">
+    <rect width="800" height="110" rx="12" fill="url(#cardGrad)" stroke="#a855f7" stroke-width="2" filter="url(#glow)" />
+    <text x="25" y="30" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#c084fc">LAYER 3: STATE MACHINE &amp; ORCHESTRATION</text>
+
+    <rect x="30" y="45" width="740" height="50" rx="8" fill="#1e293b" stroke="#475569" />
+    <text x="50" y="75" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">LangGraph Autonomous Workflow (twin/workflow.py)</text>
+    <text x="440" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Conditional Routing &amp; Threshold Evaluation</text>
+  </g>
+
+  <!-- Connector 3->4 -->
+  <path d="M 450 635 L 450 670" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)" />
+
+  <!-- ==================== LAYER 4 ==================== -->
+  <g transform="translate(50, 680)">
+    <rect width="800" height="175" rx="12" fill="url(#cardGrad)" stroke="#f59e0b" stroke-width="2" filter="url(#glow)" />
+    <text x="25" y="30" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#fbbf24">LAYER 4: SIMULATION &amp; OPTIMIZATION</text>
+
+    <rect x="30" y="50" width="350" height="100" rx="8" fill="#1e293b" stroke="#475569" />
+    <text x="50" y="80" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">SimPy Simulation</text>
+    <text x="50" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">twin/simulation.py</text>
+    <text x="50" y="124" font-family="system-ui, sans-serif" font-size="12" fill="#fbbf24">Discrete-event queue &amp; light cycles</text>
+
+    <rect x="420" y="50" width="350" height="100" rx="8" fill="#1e293b" stroke="#475569" />
+    <text x="440" y="80" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">Google OR-Tools Solver</text>
+    <text x="440" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">twin/optimizer.py</text>
+    <text x="440" y="124" font-family="system-ui, sans-serif" font-size="12" fill="#fbbf24">Congestion &amp; weather routing matrix</text>
+  </g>
+
+  <!-- Connector 4->5 -->
+  <path d="M 450 855 L 450 890" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)" />
+
+  <!-- ==================== LAYER 5 ==================== -->
+  <g transform="translate(50, 900)">
+    <rect width="800" height="180" rx="12" fill="url(#cardGrad)" stroke="#ec4899" stroke-width="2" filter="url(#glow)" />
+    <text x="25" y="30" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f472b6">LAYER 5: AGENT INTERFACE &amp; EXECUTION</text>
+
+    <rect x="30" y="55" width="350" height="100" rx="8" fill="#1e293b" stroke="#475569" />
+    <text x="50" y="85" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">FastMCP Server</text>
+    <text x="50" y="107" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">twin/mcp_server.py</text>
+    <text x="50" y="129" font-family="system-ui, sans-serif" font-size="12" fill="#f472b6">Standardized tools for AI agents</text>
+
+    <rect x="420" y="55" width="350" height="100" rx="8" fill="#1e293b" stroke="#475569" />
+    <text x="440" y="85" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">Master Orchestrator</text>
+    <text x="440" y="107" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">run_digital_twin.py</text>
+    <text x="440" y="129" font-family="system-ui, sans-serif" font-size="12" fill="#f472b6">End-to-end continuous execution loop</text>
+  </g>
+
+  <!-- Footer Tag -->
+  <text x="450" y="1115" font-family="system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Transportation Digital Twin • Production Architecture Blueprint 2026</text>
+</svg>
