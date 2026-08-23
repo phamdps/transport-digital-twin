@@ -39,6 +39,20 @@ The ultimate goal is a closed-loop system capable of **observing the physical ci
 
 ---
 
+<div align="center">
+
+## Multimodal Transportation Digital Twin Core Architecture
+
+<img src="results/transportation_digital_twin_dynamic_tokens.gif" alt="Level 5 Digital Twin Dashboard" width="900">
+
+**Transportation Digital Twin**
+
+*Agentic AI, dynamic traffic signal optimization, and automated network-wide rerouting.*
+
+</div>
+
+---
+
 # 🏗️ Digital Twin Maturity Roadmap
 
 The project progresses through five distinct digital twin maturity levels, moving from spatial representation toward autonomous transportation control.
