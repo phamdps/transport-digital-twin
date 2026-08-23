@@ -371,18 +371,6 @@ The project includes visual snapshots demonstrating the evolution of the digital
 
 ---
 
-<div align="center">
-
-## Multimodal Transportation Digital Twin
-
-<img src="results/transportation_digital_twin_dynamic_tokens.gif" alt="Level 5 Digital Twin Dashboard" width="900">
-
-**Transportation Digital Twin**
-
-*Agentic AI, dynamic traffic signal optimization, and automated network-wide rerouting.*
-
-</div>
-
 # 🖥️ Command Center Evolution
 
 The dashboards progressively evolve with the maturity of the digital twin.
