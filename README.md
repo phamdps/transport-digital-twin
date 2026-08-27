@@ -43,7 +43,7 @@ The ultimate goal is a closed-loop system capable of **observing the physical ci
 
 ## Multimodal Transportation Digital Twin Core Architecture
 
-<img src="results/transportation_digital_twin_dynamic_tokens.gif" alt="Level 5 Digital Twin Dashboard" width="900">
+<img src="results/multilmodal_transportation_digital_twin.gif" alt="Level 5 Digital Twin Dashboard" width="900">
 
 **Transportation Digital Twin**
 
